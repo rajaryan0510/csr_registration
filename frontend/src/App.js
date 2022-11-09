@@ -9,6 +9,15 @@ import Geography from "./components/Master/Geography/Geography";
 
 import Rate from "./components/Master/Rate/Rate";
 import Service from "./components/Master/Service/Service";
+import EcoClub from "./components/Responsibilities.jsx/EcoClub";
+import NccClub from "./components/Responsibilities.jsx/NccClub";
+import NssClub from "./components/Responsibilities.jsx/NssClub";
+import RoadSafetyClub from "./components/Responsibilities.jsx/RoadSafetyClub";
+import YrcClub from "./components/Responsibilities.jsx/YrcClub";
+import AdventureClub from "./components/Sports/AdventureClub";
+import HealthClub from "./components/Sports/HealthClub";
+import IndoorAndOutdoorClub from "./components/Sports/IndoorAndOutdoorClub";
+import YogaClub from "./components/Sports/YogaClub";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
@@ -44,6 +53,8 @@ function App() {
 
           <Route path='/master' element={<Master />} />
 
+          {/* Clulture route */}
+
           <Route path='/culture/music' element={<MusicClub />} />
 
           <Route path='/culture/dance' element={<DanceClub />} />
@@ -55,6 +66,28 @@ function App() {
           <Route path='/culture/photography' element={<PhotographyClub />} />
 
           <Route path='/culture/language' element={<LanguageClub />} />
+
+          {/* Sport route */}
+
+          <Route path='/sports/indooroutdoor' element={<IndoorAndOutdoorClub/>} />
+
+          <Route path='/sports/health' element={<HealthClub />} />
+
+          <Route path='/sports/adventure' element={<AdventureClub/>} />
+
+          <Route path='/sports/yoga' element={<YogaClub/>} />
+
+          {/* Responsibility route */}
+
+          <Route path='/responsibility/eco' element={<EcoClub/>} />
+
+          <Route path='/responsibility/roadsafety' element={<RoadSafetyClub />} />
+
+          <Route path='/responsibility/ncc' element={<NccClub/>} />
+
+          <Route path='/responsibility/nss' element={<NssClub/>} />
+
+          <Route path='/responsibility/yrc' element={<YrcClub/>} />
 
           <Route path='/master/geography' element={<Geography />} />
 

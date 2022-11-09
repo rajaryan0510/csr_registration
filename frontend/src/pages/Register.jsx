@@ -42,12 +42,12 @@ const Register = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 h-screen items-center  bg-grey-200 ">
+    <div className="grid grid-cols-2 h-screen items-center  bg-[#DAF7A6] ">
 
-      <div className="login-container grid text-center lg:w-1/3 md:w-2 lg:mx-auto md:mx-auto p-4 rounded-full ">
+      <div className="login-container grid text-center lg:w-1/2 md:w-2 lg:mx-auto md:mx-auto lg:my-24  rounded- bg-grey-200    ">
         <div className="login-form shadow-2xl p-4 lg:p-10 ">
           <div className="login-form-header ">
-            <img src={cutm} className="-mt-20" alt="" sizes="" />
+            <img src={cutm} className="-mt-20 h-[100px] mx-20 " alt="" sizes="" />
           </div>
           <div className="login-form-body">
             <form onSubmit={handleSubmit}>
@@ -64,13 +64,13 @@ const Register = () => {
                 <Input label="Password" name="password" value={data.password} required type="password" onChange={handleChange} color="grey" icon={<i className="fa-solid fa-key"></i>} />
               </div>
               {/* recaptcha */}
-              <div className="login-form-input mb-4">
+              {/* <div className="login-form-input mb-4">
                 <ReCAPTCHA
                   sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                   onChange={onChange}
 
                 />
-              </div>
+              </div> */}
               {error && <div className="text-red-500">{error}</div>}
               <div className="login-form-input">
                 <Button color="red" className="w-full" type="submit">Register</Button>
@@ -90,7 +90,7 @@ const Register = () => {
         </div>
       </div>
       <div className=" visible lg:visible md:invisible ">
-        <img src={cutm} className=" rounded-2xl shadow-2xl invisible lg:visible mx-auto shadow-gray-600 border-grey-400 border-8" alt="" />
+        <img src={cutm} className=" rounded-2xl shadow-2xl h-[600px] bg-grey-200 lg:h-[500px]  mx-auto shadow-grey-400 " alt="" />
       </div>
     </div>
   )

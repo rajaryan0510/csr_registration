@@ -75,22 +75,22 @@ const routes = [
     icon: <SportsFootballIcon />,
     subRoutes: [
       {
-        path: "/master/party",
+        path: "/sports/indooroutdoor",
         name: "Indoor & Outdoor",
         icon: <img src={games} className="w-6 " alt='' />,
       },
       {
-        path: "/master/geography",
+        path: "/sports/health",
         name: "Health Club",
         icon: <img src={health} className="w-6 " alt='' />,
       },
       {
-        path: "/master/service",
+        path: "/sports/adventure",
         name: "Adventure Club",
         icon: <img src={adventure} className="w-6 " alt='' />,
       },
       {
-        path: "/master/rate",
+        path: "/sports/yoga",
         name: "Yoga Club",
         icon: <img src={yoga} className="w-6 " alt='' />,
       },
@@ -102,27 +102,27 @@ const routes = [
     icon: <FaAmbulance />,
     subRoutes: [
       {
-        path: "/master/party",
+        path: "/responsibility/eco",
         name: "ECO Club",
         icon: <img src={eco} className="w-6 " alt='' />,
       },
       {
-        path: "/master/geography",
+        path: "/responsibility/roadsafety",
         name: "Road Safety",
         icon: <img src={roadSafety} className="w-6 " alt='' />,
       },
       {
-        path: "/master/service",
+        path: "/responsibility/ncc",
         name: "NCC",
         icon: <img src={ncc} className="w-6 " alt='' />,
       },
       {
-        path: "/master/rate",
+        path: "/responsibility/nss",
         name: "NSS",
         icon: <img src={nss} className="w-6 " alt='' />,
       },
       {
-        path: "/master/rate",
+        path: "/responsibility/yrc",
         name: "YRC",
         icon: <img src={yrc} className="w-6 " alt='' />,
       },

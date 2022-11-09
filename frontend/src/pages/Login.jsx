@@ -48,15 +48,15 @@ const Login = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 w-auto h-screen items-center  bg-yellow-200 ">
-      <div className="login-container grid text-center lg:w-1/2  mx-auto rounded-full ">
-        <div className="login-form  shadow-red-200 bg-grey-200 shadow-2xl p-6 mx-2">
+    <div className="grid grid-cols-2 w-auto h-screen items-center  bg-[#DAF7A6] ">
+      <div className="login-container grid text-center lg:w-1/2  mx-auto ">
+        <div className="login-form  shadow-grey-400 bg-grey-200 shadow-2xl p-6 lg:py-16 mx-2 lg:w-[350px] lg:h-[400px] ">
           <div className="login-form-header ">
-            {/* <img src={motherson_logo} className="-mt-20" alt="" sizes="" /> */}
-            <span className="font-medium text-2xl text-blue-900 hidden md:block">
-              <small className="text-2xl text-red-600">CENTURION </small>{" "}
+            <img src={cutm} className="-mt-20 h-[150px] mx-20 " alt="" sizes="" />
+            {/* <span className="font-medium text-4xl text-blue-900 hidden md:block">
+              <small className="text-4xl text-red-600">CENTURION </small>{" "}
               UNIVERSITY
-            </span>
+            </span> */}
           </div>
           <div className="login-form-body">
             <form onSubmit={handleSubmit}>
@@ -108,7 +108,7 @@ const Login = () => {
       <div className=" invisible lg:visible">
         <img
           src={cutm}
-          className=" rounded-2xl shadow-2xl h-[600px] bg-grey-200  mx-auto shadow-red-200 "
+          className=" rounded-2xl shadow-2xl h-[600px] bg-grey-200 lg:h-[500px]  mx-auto shadow-grey-400 "
           alt=""
         />
       </div>

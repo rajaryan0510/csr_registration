@@ -12,10 +12,10 @@ const Dashboard = () => {
     <SideBar>
       {/* <div>Dashboard</div> */}
 
-      <div className='flex  ' >
+      <div className='flex mt-[-70px]  ' >
 
-        <Card className='mb-[150px] mt-[100px] mx-[50px]  ' sx={{ maxWidth: 345 }}>
-            <CardActionArea >
+        <Card className='mb-[150px] mt-[100px] mx-[50px] ' sx={{ maxWidth: 345 }}>
+            <CardActionArea  >
                 <img className='m-[30px]  w-[280px] h-[140px] object-cover rounded-lg  ' src={CulturalIMG} alt='cutm'/>
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -29,7 +29,7 @@ const Dashboard = () => {
                 </CardContent>
             </CardActionArea>
             <div className='mx-[90px] my-[15px] ' >
-                <Button variant="" color="red" className="" size="md"  >
+                <Button variant="" color="red" className="w-[130px]" size="md"  >
                     View Details
                   </Button>
                 </div>
@@ -49,7 +49,7 @@ const Dashboard = () => {
                 </CardContent>
             </CardActionArea>
             <div className='mx-[90px] my-[15px] ' >
-                <Button variant="" color="red" className="" size="md"  >
+                <Button variant="" color="red" className=" w-[130px] " size="md"  >
                     View Details
                   </Button>
                 </div>
