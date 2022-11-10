@@ -1,10 +1,10 @@
-package com.smartproject.csr;
+package com.cutm.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CsrBackendApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

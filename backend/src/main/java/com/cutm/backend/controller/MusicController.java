@@ -1,4 +1,5 @@
-package com.smartproject.csr.controller;
+package com.cutm.backend.controller;
+
 
 import java.util.List;
 
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.smartproject.csr.model.MusicClub;
-import com.smartproject.csr.repository.MusicClubRepo;
+import com.cutm.backend.model.MusicClub;
+import com.cutm.backend.repository.MusicRepository;
+
+
 
 @RestController
 @CrossOrigin("*")
@@ -19,16 +22,16 @@ import com.smartproject.csr.repository.MusicClubRepo;
 public class MusicController {
 	
 	@Autowired
-	private MusicClubRepo musicClubRepo;
+	private MusicRepository musicRepository;
 	
 	@PostMapping("/music")
 	MusicClub mewMusicClub(@RequestBody MusicClub newMusicClub) {
-		return musicClubRepo.save(newMusicClub);
+		return musicRepository.save(newMusicClub);
 	}
 	
 	@GetMapping("/music")
 	List<MusicClub> getAllMusicClub(){
-		return musicClubRepo.findAll();
+		return musicRepository.findAll();
 	}
 
 }

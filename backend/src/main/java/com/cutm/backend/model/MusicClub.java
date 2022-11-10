@@ -1,11 +1,12 @@
-package com.smartproject.csr.model;
+package com.cutm.backend.model;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "music" )
+@Table(name = "music")
 public class MusicClub {
 	
 	@Id
@@ -15,20 +16,18 @@ public class MusicClub {
 	private String semester;
 	private String mobileNo;
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	public Long getRegistrationNo() {
 		return registrationNo;
 	}
 	public void setRegistrationNo(Long registrationNo) {
 		this.registrationNo = registrationNo;
 	}
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getBranch() {
 		return branch;
 	}
