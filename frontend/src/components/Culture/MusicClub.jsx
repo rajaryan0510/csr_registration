@@ -1,69 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { Button, Input } from "@material-tailwind/react";
 import SideBar from "../Sidebar/SideBar";
 import MusicService from "../../services/MusicService";
 
-class MusicClub extends Component {
-  // const MusicClub = () => {
-  constructor(props) {
-    super(props);
+  const MusicClub = () => {
 
-    this.state = {
-      name: "",
-      registrationNo: "",
-      branch: "",
-      semester: "",
-      mobileNo: "",
-    };
+  const [name, setName] = useState('')
+  const [registrationNo, setRegistrationNo] = useState('')
+  const [branch, setBranch] = useState('')
+  const [semester, setSemester] = useState('')
+  const [mobileNo, setMobileNo] = useState('')
 
-    this.changeNameHandler = this.changeNameHandler.bind(this);
-    this.changeRegistrationNoHandler =
-      this.changeRegistrationNoHandler.bind(this);
-    this.changeBranchHandler = this.changeBranchHandler.bind(this);
-    this.changeSemesterHandler = this.changeSemesterHandler.bind(this);
-    this.changeMobileNoHandler = this.changeMobileNoHandler.bind(this);
+  const navigate = useNavigate();
+
+
+  const saveData = (e) => {
+        e.preventDefault();
+
+        const music = { name, registrationNo, branch, semester, mobileNo }
+
+        MusicService.createMusicClub(music).then((response) => {
+            console.log(response.data)
+            navigate('/dashboard');
+            
+            
+        }).catch(error => {
+          console.log(error)
+        })
   }
 
-  dashboard = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("token");
-    //navigate("/dashboard");
-    useNavigate("/dashboard");
-  };
-  saveStudent = (e) => {
-    e.preventDefault();
-    let student = {
-      name: this.state.name,
-      registrationNo: this.state.registrationNo,
-      branch: this.state.branch,
-      semester: this.state.semester,
-      mobileNo: this.state.mobileNo,
-    };
-    console.log("student => " + JSON.stringify(student));
-
-    MusicService.createStudent(student).then((response) => {
-      this.dashboard();
-    });
-  };
-
-  changeNameHandler = (event) => {
-    this.setState({ name: event.target.value });
-  };
-  changeRegistrationNoHandler = (event) => {
-    this.setState({ registrationNo: event.target.value });
-  };
-  changeBranchHandler = (event) => {
-    this.setState({ branch: event.target.value });
-  };
-  changeSemesterHandler = (event) => {
-    this.setState({ semester: event.target.value });
-  };
-  changeMobileNoHandler = (event) => {
-    this.setState({ mobileNo: event.target.value });
-  };
-
-  render() {
     return (
       <div>
         <SideBar>
@@ -80,8 +47,9 @@ class MusicClub extends Component {
                       type={"text"}
                       color="grey"
                       className="w-full"
-                      value={this.state.name}
-                      onChange={this.changeNameHandler}
+                      name="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="my-2">
@@ -90,8 +58,9 @@ class MusicClub extends Component {
                       type={"number"}
                       color="grey"
                       className="w-full"
-                      value={this.state.registrationNo}
-                      onChange={this.changeRegistrationNoHandler}
+                      name="registrationNo"
+                      value={registrationNo}
+                      onChange={(e)=> setRegistrationNo(e.target.value)}
                     />
                   </div>
                   <div className="my-2">
@@ -100,8 +69,9 @@ class MusicClub extends Component {
                       type={"text"}
                       color="grey"
                       className="w-full"
-                      value={this.state.branch}
-                      onChange={this.changeBranchHandler}
+                      name="branch"
+                      value={branch}
+                      onChange={(e)=> setBranch(e.target.value)}
                     />
                   </div>
                   <div className="my-2">
@@ -110,8 +80,9 @@ class MusicClub extends Component {
                       type={"text"}
                       color="grey"
                       className="w-full"
-                      value={this.state.semester}
-                      onChange={this.changeSemesterHandler}
+                      name="semester"
+                      value={semester}
+                      onChange={(e)=> setSemester(e.target.value)}
                     />
                   </div>
                   <div className="my-2">
@@ -120,15 +91,16 @@ class MusicClub extends Component {
                       type={"number"}
                       color="grey"
                       className="w-full"
-                      value={this.state.mobileNo}
-                      onChange={this.changeMobileNoHandler}
+                      name="mobileNo"
+                      value={mobileNo}
+                      onChange={(e)=> setMobileNo(e.target.value)}
                     />
                   </div>
                   <div className="my-2">
                     <Button
                       color="red"
                       className="w-full"
-                      onClick={this.saveStudent}
+                      onClick={(e)=>saveData(e)}
                     >
                       Save
                     </Button>
@@ -141,6 +113,6 @@ class MusicClub extends Component {
       </div>
     );
   }
-}
+// }
 
 export default MusicClub;
